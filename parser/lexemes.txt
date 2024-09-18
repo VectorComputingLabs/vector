@@ -1,0 +1,18 @@
+// (c) Toe•bias Technologies
+// Higenyi Tobias Thomas
+//
+// Definition of vector lexemes
+
+Digit:          `0`...`9`
+Char:           `A`...`Z` |
+                `a`...`z` |
+                `_`
+Num:            Digit+
+Arith-sym:      `+`|`-`|`/`|`%`|`*`|`^`
+Comp-sym:       `<`|`>`|`==`|`<=`|`>=`|`!=`
+Aug-sym:        `+=`|`-=`|
+Id:             Char (Char|Num)
+Simp-Type:      Id
+Array-Type:     Simp-Type (`[` [Num] `]`)*
+Dict-Type:      Simp-Type `[` Simp-Type `,` (Simp-Type|Array-Type) `]`
+Type:           Simp-Type|Array-Type|Dict-Type
