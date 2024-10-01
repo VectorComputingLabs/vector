@@ -7,22 +7,22 @@
 // groups tokens of the same class together
 
 keywords:
-   DEF:      "def"
-   VAR:      "var"
-   IF:       "if"
-   ELSE:     "else"
-   TYPE:     "type"
-   STRUCT:   "struct"
-   TYPEDEF:  "typedef"
-   SWITCH:
-   CASE:
-   FOR:
-   WHILE:
-   ENDIF:
-   ENDFOR:
-   ENDWHILE:
-   ENDSWITCH:
-   END:
+   DEF:        "def"
+   VAR:        "var"
+   IF:         "if"
+   ELSE:       "else"
+   TYPE:       "type"
+   STRUCT:     "struct"
+   TYPEDEF:    "typedef"
+   SWITCH:     "switch"
+   CASE:       "case"
+   FOR:        "for"
+   WHILE:      "while"
+   ENDIF:      "endif"
+   ENDFOR:     "endfor"
+   ENDWHILE:   "endwhile"
+   ENDSWITCH:  "endswitch"
+   END:        "end"
 
 symbols:
    AT:   "@"
@@ -30,24 +30,24 @@ symbols:
 
 ops:
    logic_ops:
-      LT:
-      GT:
-      EQ:
-      LTE:
-      GTE:
+      LT:   "<"
+      GT:   ">"
+      EQ:   "=="
+      LTE:  "<="
+      GTE:  ">="
    arith_ops:
-      ADD
-      SUB
-      DIV
-      MULT
-      INC
-      DEC
-      MULTINC
-      DIVDEC
-      POW
+      ADD:      "+"
+      SUB:      "-"
+      DIV:      "/"
+      MULT:     "*"
+      INC:      "+="
+      DEC:      "-="
+      MULTINC:  "*="
+      DIVDEC:   "/="
    bitwise_ops:
-      
-
+      // should be implemented in a library instead
+   extra_ops:
+      // implemented by the type objects to add syntactic sugar to some operations
 literals:
 
    
