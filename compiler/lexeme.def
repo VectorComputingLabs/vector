@@ -23,11 +23,17 @@ keywords:
    ENDWHILE:   "endwhile"
    ENDSWITCH:  "endswitch"
    END:        "end"
-
+   RETURN:     "return"
+   YIELD:      "yield"
+   CONST:      "const"
 symbols:
-   AT:   "@"
-   TERM: ";"
-
+   AT:    "@"
+   TERM:  ";"
+   LSB:   "["
+   RSB:   "]"
+   LCB:   "{"
+   RCB:   "}"
+   DSLSH: "//"   ; double slash
 ops:
    logic_ops:
       LT:   "<"
