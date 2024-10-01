@@ -1,0 +1,53 @@
+// VectorComputingLabs (c) 2024
+// Higenyi Tobias Thomas
+// Toe•bias </HT>
+//
+// Definition of lexemes in vector.
+// These are defined in a tree structure that
+// groups tokens of the same class together
+
+keywords:
+   DEF:      "def"
+   VAR:      "var"
+   IF:       "if"
+   ELSE:     "else"
+   TYPE:     "type"
+   STRUCT:   "struct"
+   TYPEDEF:  "typedef"
+   SWITCH:
+   CASE:
+   FOR:
+   WHILE:
+   ENDIF:
+   ENDFOR:
+   ENDWHILE:
+   ENDSWITCH:
+   END:
+
+symbols:
+   AT:   "@"
+   TERM: ";"
+
+ops:
+   logic_ops:
+      LT:
+      GT:
+      EQ:
+      LTE:
+      GTE:
+   arith_ops:
+      ADD
+      SUB
+      DIV
+      MULT
+      INC
+      DEC
+      MULTINC
+      DIVDEC
+      POW
+   bitwise_ops:
+      
+
+literals:
+
+   
