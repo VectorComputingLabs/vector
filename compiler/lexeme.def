@@ -8,7 +8,6 @@
 
 keywords:
    DEF:        "def"
-   VAR:        "var"
    IF:         "if"
    ELSE:       "else"
    TYPE:       "type"
@@ -26,6 +25,7 @@ keywords:
    RETURN:     "return"
    YIELD:      "yield"
    CONST:      "const"
+   NEW:        "new"
 symbols:
    AT:    "@"
    TERM:  ";"
@@ -33,12 +33,17 @@ symbols:
    RSB:   "]"
    LCB:   "{"
    RCB:   "}"
-   DSLSH: "//"   ; double slash
+   COL:   ":"
+   COM:   "//"
+   LBr:   "("
+   RBr:   ")"
+   ARRW:  "->" 
 ops:
    logic_ops:
       LT:   "<"
       GT:   ">"
       EQ:   "=="
+      NEQ:  "!="
       LTE:  "<="
       GTE:  ">="
    arith_ops:
@@ -55,5 +60,6 @@ ops:
    extra_ops:
       // implemented by the type objects to add syntactic sugar to some operations
 literals:
-
-   
+   char:"a" ... "z"| "A" ... "Z"
+   num: 0 ... 9
+   us: "_"
