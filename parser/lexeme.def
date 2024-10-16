@@ -28,7 +28,7 @@ keywords:
    NEW:        "new"
 symbols:
    AT:    "@"
-   TERM:  ";"
+   TERM:  "\n"
    LSB:   "["
    RSB:   "]"
    LCB:   "{"
