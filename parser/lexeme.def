@@ -11,8 +11,6 @@ keywords:
    IF:         "if"
    ELSE:       "else"
    TYPE:       "type"
-   STRUCT:     "struct"
-   TYPEDEF:    "typedef"
    SWITCH:     "switch"
    CASE:       "case"
    FOR:        "for"
@@ -26,6 +24,8 @@ keywords:
    YIELD:      "yield"
    CONST:      "const"
    NEW:        "new"
+modifiers:
+   DATAONLY:   "dataonly"
 symbols:
    AT:    "@"
    TERM:  "\n"
