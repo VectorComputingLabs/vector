@@ -22,10 +22,12 @@ keywords:
    END:        "end"
    RETURN:     "return"
    YIELD:      "yield"
-   CONST:      "const"
    NEW:        "new"
+   IS:         "is"
+   IN:         "in"
 modifiers:
    DATAONLY:   "dataonly"
+   CONST:      "const"
 symbols:
    AT:    "@"
    TERM:  "\n"
@@ -37,7 +39,8 @@ symbols:
    COM:   "//"
    LBr:   "("
    RBr:   ")"
-   ARRW:  "->" 
+   ARRW:  "->"
+   US:    "_"
 ops:
    logic_ops:
       LT:   "<"
@@ -62,4 +65,3 @@ ops:
 literals:
    char:"a" ... "z"| "A" ... "Z"
    num: 0 ... 9
-   us: "_"
