@@ -27,11 +27,11 @@ symbols and productions themselves. Tokens are atomic building blocks
 of the language. They include keywords, literals, operators, separators
 and white space. Descriptions are written as regular expressions.
 If T is a term in a description D, then:
-    - T+ = T appears 1 or more times
-    - T* = T appears 0 or more times
-    - T1|T2 = either T1 or T2
-    - (T1,T2) = a group of T1 and T2
-    - [T] = T is optional
+- T+ = T appears 1 or more times
+- T* = T appears 0 or more times
+- T1|T2 = either T1 or T2
+- (T1,T2) = a group of T1 and T2
+- [T] = T is optional
 
 ## Literals
 Literals are a representation of supported builtin types in vector.
