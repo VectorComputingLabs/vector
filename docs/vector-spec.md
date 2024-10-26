@@ -27,11 +27,11 @@ symbols and productions themselves. Tokens are atomic building blocks
 of the language. They include keywords, literals, operators, separators
 and white space. Descriptions are written as regular expressions.
 If T is a term in a description D, then:
-- T+ = T appears 1 or more times
-- T* = T appears 0 or more times
-- T1|T2 = either T1 or T2
+- T+      = T appears 1 or more times
+- T*      = T appears 0 or more times
+- T1|T2   = either T1 or T2
 - (T1,T2) = a group of T1 and T2
-- [T] = T is optional
+- [T]     = T is optional
 
 ## Literals
 Literals are a representation of supported builtin types in vector.
@@ -72,7 +72,8 @@ quotation marks. The characters are from the unicode UTF-8 charset.
 An empty string is one which DOES NOT contain a character sequence
 between the quotation marks. Strings can be arbitrarily long.
 ```
-string := `("|')` character* `("|')`
+character := u+0000 ... u+ffff
+string    := `("|')` character* `("|')`
 ```
 ### Boolean
 A boolean type is either true or false.
@@ -92,12 +93,14 @@ They include:
 Identifiers are valid names for entities in a vector program.
 They are sequences of alpha-numeric characters of variable length.
 Identifiers SHOULD NOT start with numeric characters.
-Identifiers CAN contain underscore characters (_).
+Identifiers CAN contain underscore characters ('_').
 Identifiers that start with an underscore character are considered
 private to the current scope they are defined in.
+Entities with Indentifiers that start witha double underscore('__')
+are executed by the runtime in a special way
 ```
-identifier        := [_]alpha-numeric-seq
-alpha-numeric-seq := char[char|int|"_"]*
+alpha-numeric-seq := character (character|digit)*
+identifier        := ['_'['_']]alpha-numeric-seq
 ``` 
 
 ## Keywords
