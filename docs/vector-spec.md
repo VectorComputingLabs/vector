@@ -59,22 +59,34 @@ hexadecimal-number := 0('x'|'X') alpha-digit (['_'] alpha-digit)*
 ### Floating-point numbers
 Floating-point numbers are numeric data represented by a sequence of digits
 separated by a single period character ('.'). The sequence of digits on the
-left-hand part is called the `whole number` 
-while the sequence on the right is called `mantissa`.
-Floating point numbers are only represented with decimal integers.
-The mantissa can be postfixed with an exponent number.
+left-hand part is called the `whole number` while the sequence on the right 
+is called `mantissa`. Floating point numbers are only represented with decimal 
+integers. The mantissa can be postfixed with an exponent number.
 Binary and Hexadecimal numbers cannot be used as floating-point numbers
 ```
 floating-point-number := [-]digit+ '.' digit+['e' digit+]
 ```
-
+### String
+A string is a sequence of characters enclosed in single or double 
+quotation marks. The characters are from the unicode UTF-8 charset.
+An empty string is one which DOES NOT contain a character sequence
+between the quotation marks. Strings can be arbitrarily long.
+```
+string := `("|')` character* `("|')`
+```
+### Boolean
+A boolean type is either true or false.
+It is represented by values `true` and `false`.
+```
+boolean := 'true'|'false'
+```
 
 ## Scope
 Scope is an execution context in which variables are defined.
 They include:
-    - Module Scope
-    - Instance Scope
-    - Function Scope
+- Module Scope
+- Instance Scope
+- Function Scope
 
 ## Identifiers
 Identifiers are valid names for entities in a vector program.
