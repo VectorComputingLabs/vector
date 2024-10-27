@@ -114,15 +114,87 @@ return   yield     new        is
 in
 ```
 
-## Modifiers
-Modifiers are special words that alter or enhance how an entity is
-created or used. They include:
-### const
-The const modifier is used to define constant variables who's value is
-unchanged throughout the life-time of the running program
-### dataonly
+## Expressions
 
-## Comments
+## Module
+
+## Function
+Functions are a sequence of statements enclosed in a scope. They have a signature
+and a body. A function signature contains the `def` keyword used to define functions,
+followed by the function name, a list of arguments and a return type. The function
+definition can optionally contain modifiers. The function body contains a sequence
+of statements and expressions. It is closed using the `end` keyword.
+
+### Arguments
+Arguments represent the number and type of input parameters that must be passed to
+a function to execute it. They can be referred to as formal parameters. Arguments
+can be divided into normal arguments, optional arguments and variadic arguments.
+A function can only have a maximum of 8 arguments.
+#### Normal Arguments
+Normal arguments are arguments whose values need to be provided for the function to
+execute. They are defined using a type and name.
+```
+normal-arg := type name
+```
+#### Optional arguments
+Optional arguments are arguments whole values are not needed to be present for the
+function to executed. They are defined as normal arguments but start with a minus (-)
+prefix. The Optional argument can be provided with an optional value during definition
+which it will assume in case a concrete value has not been passed to it during a call.
+If an optional value is not provided, the default value of the type is assumed.
+```
+optional-arg := '-' normal-arg ['=' value]
+```
+#### Variadic arguments
+Variadic Arguments take in input values of various numbers. Normal and Optional arguments
+only take in a single value for each argument. Variadic arguments are defined as normal
+attributes that are assigned to the Ellipsis ('...') as its value. The number of values
+that can be passed to a variadic argument range from 0 to infinity.
+```
+variadic-arg := normal-arg '=' '...'
+```
+#### Reference arguments
+Reference arguments are used in pass-by-reference function calls. A reference is passed
+as the value to the argument. It is defined as a normal argument but starts with an
+asterick ('*') as a prefix.
+```
+reference-arg = '*' normal-arg
+```
+#### Function definition
+```
+function-definition := function-signature `:` function-body `end`
+function-signature  := [modifier] `def` name `(`arguments`)` return-type
+function-body       := statement+
+arguments           := (normal-arg|optional-arg|variadic-arg)
+```
+### Function call
+
+### Return statement
+
+### Yield statement
+
+
+## Type
+A type is an entity in vector with attributes and functions that operate on
+those attributes. Functions can optionally be bound directly to the type.
+Functions bound directly to the type are refered to as methods. Types are
+defined both in the language and in user code. Types defined in the language
+are `builtin` types. Types have an implicit default value
+
+### Builtin types
+Builtin types are available in the language. They can either be primitive types
+or reference types. Builtin primitive types include `Integers`,`Floats`,`Strings`
+and `Boolean`. Builtin reference types include `List`,`Dictionary`,`Function`.
+
+### User-defined types
+User-defined types include `normal types`,`generic types`,`union types`.
+User-defined types are defined using the `type` keyword followed by the type name
+and type attributes.
+```
+type-definition := `type` type-name type-attributes
+type-name       := character*
+type-attributes := `(` argument-list `)`
+```
 
 ## Variables
 Variables are memory locations that store addresses to values.
@@ -132,3 +204,11 @@ and then assigned to a value of the same type as the variable.
 variable-definition := [modifier] type-annotation name "=" value
 type-annotation     := type-definition
 ```
+
+## Modifiers
+Modifiers are special words that alter or enhance how an entity is
+created or used. They include:
+### const
+The const modifier is used to define constant variables who's value is
+unchanged throughout the life-time of the running program
+### dataonly
