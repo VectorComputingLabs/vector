@@ -43,28 +43,28 @@ prefix followed by a sequence of 1 or 0 integers.
 Decimal numbers are not prefixed. They contain a sequence of `0 - 9` integers.
 Hexadecimal numbers start with a `0(x|X)` prefix followed by a sequence of
 `0 - 9` digits and `a|A ... f|F` characters. The sequence of digits of a
-number can optionally contain an underscore ('_') character as a separator.
-Decimal numbers are signed. Prefixing them with a minus sign ('-') converts
+number can optionally contain an underscore (`_`) character as a separator.
+Decimal numbers are signed. Prefixing them with a minus sign (`-`) converts
 them into negative numbers. Decimal numbers can also have an exponential
-postfix represented by character ('e') followed by a sequence of digits.
+postfix represented by character (`e`) followed by a sequence of digits.
 The sequence of digits can also be a negative number
 ```
 binary-digit       := (0|1)
 digit              := (binary-digit|2|3|4|5|6|7|8|9)
-alpha-digit        := digit|'a'|'b'|'c'|'d'|'e'|'f'|'A'|'B'|'C'|'D'|'E'|'F'
-binary-number      := 0('b'|'B') binary-digit (['_'] binary-digit)*
-decimal-number     := [-]digit (['_']digit)* ['e'['-']digit+]
-hexadecimal-number := 0('x'|'X') alpha-digit (['_'] alpha-digit)*
+alpha-digit        := digit|`a`|`b`|`c`|`d`|`e`|`f`|`A`|`B`|`C`|`D`|`E`|`F`
+binary-number      := 0(`b`|`B`) binary-digit ([`_`] binary-digit)*
+decimal-number     := [-]digit ([`_`]digit)* [`e`[`-`]digit+]
+hexadecimal-number := 0(`x`|`X`) alpha-digit ([`_`] alpha-digit)*
 ```
 ### Floating-point numbers
 Floating-point numbers are numeric data represented by a sequence of digits
-separated by a single period character ('.'). The sequence of digits on the
+separated by a single period character (`.`). The sequence of digits on the
 left-hand part is called the `whole number` while the sequence on the right 
 is called `mantissa`. Floating point numbers are only represented with decimal 
 integers. The mantissa can be postfixed with an exponent number.
 Binary and Hexadecimal numbers cannot be used as floating-point numbers
 ```
-floating-point-number := [-]digit+ '.' digit+['e' digit+]
+floating-point-number := [-]digit+ `.` digit+[`e` digit+]
 ```
 ### String
 A string is a sequence of characters enclosed in single or double 
@@ -73,13 +73,13 @@ An empty string is one which DOES NOT contain a character sequence
 between the quotation marks. Strings can be arbitrarily long.
 ```
 character := u+0000 ... u+ffff
-string    := `("|')` character* `("|')`
+string    := (`"`|`'`) character* (`"`|`'`)
 ```
 ### Boolean
 A boolean type is either true or false.
 It is represented by values `true` and `false`.
 ```
-boolean := 'true'|'false'
+boolean := `true`|`false`
 ```
 
 ## Scope
@@ -93,18 +93,18 @@ They include:
 Identifiers are valid names for entities in a vector program.
 They are sequences of alpha-numeric characters of variable length.
 Identifiers SHOULD NOT start with numeric characters.
-Identifiers CAN contain underscore characters ('_').
+Identifiers CAN contain underscore characters (`_`).
 Identifiers that start with an underscore character are considered
 private to the current scope they are defined in.
-Entities with Indentifiers that start witha double underscore('__')
+Entities with Indentifiers that start with a double underscore(`__`)
 are executed by the runtime in a special way
 ```
 alpha-numeric-seq := character (character|digit)*
-identifier        := ['_'['_']]alpha-numeric-seq
+identifier        := [`_`[`_`]]alpha-numeric-seq
 ``` 
 
 ## Keywords
-Keywords are words that carry special meaning in vector and cannont
+Keywords are words that carry special meaning in vector and can not
 be used as identifiers. They include
 ```
 def      if        else       switch
@@ -145,24 +145,24 @@ prefix. The Optional argument can be provided with an optional value during defi
 which it will assume in case a concrete value has not been passed to it during a call.
 If an optional value is not provided, the default value of the type is assumed.
 ```
-optional-arg := '-' basic-arg ['=' value]
+optional-arg := `-` basic-arg [`=` value]
 ```
 
 #### Variadic arguments
 Variadic Arguments take in input values of various numbers. Basic and Optional arguments
 only take in a single value for each argument. Variadic arguments are defined as basic
-attributes that are assigned to the Ellipsis ('...') as its value. The number of values
+attributes that are assigned to the Ellipsis (`...`) as its value. The number of values
 that can be passed to a variadic argument range from 0 to infinity.
 ```
-variadic-arg := basic-arg '=' '...'
+variadic-arg := basic-arg `=` `...`
 ```
 
 #### Reference arguments
 Reference arguments are used in pass-by-reference function calls. A reference is passed
 as the value to the argument. It is defined as a basic argument but starts with an
-asterick ('*') as a prefix.
+asterick (`*`) as a prefix.
 ```
-reference-arg = '*' basic-arg
+reference-arg = `*` basic-arg
 ```
 
 ### Function definition
@@ -262,6 +262,6 @@ type-annotation     := type-definition
 Modifiers are special words that alter or enhance how an entity is
 created or used. They include:
 ### const
-The const modifier is used to define constant variables who's value is
+The const modifier is used to define constant variables whose value is
 unchanged throughout the life-time of the running program
 ### dataonly
