@@ -30,7 +30,7 @@ modifiers:
    CONST:      "const"
 symbols:
    AT:    "@"
-   TERM:  "\n"
+   TERM:  ";"
    LSB:   "["
    RSB:   "]"
    LCB:   "{"
