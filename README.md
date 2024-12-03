@@ -1,5 +1,5 @@
 # vector
-Vector is a super-fast, light-weight and production-ready programming language.
+Vector is a simple, fast and effective programming language.
 It is designed to address the needs of modern programming and software development
 which are:
 - Complexity
